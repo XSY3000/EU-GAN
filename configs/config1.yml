@@ -1,4 +1,4 @@
-proj_NAME: noEAM
+proj_NAME: EAM_test
 
 dataset: CustomDataset_G
 traindataset_args:
@@ -18,31 +18,18 @@ valdataset_args:
 testdataset_args:
 #  mask_density: 20
   image_dir:
-#    - filedata\riceroot\images
     - filedata/cotton0610
     - filedata/cotton0618
-#    - filedata\orange
-#    - filedata\waterbase
 
 iters: 150000
 batch_size: 6
 lr: 0.0004
 
 #resume: null
-resume:
-#  - logs/2023-06-16-17-11-38-all3dataset/checkpoints/discriminatorG_20.pth
-#  - logs/2023-06-16-17-11-38-all3dataset/checkpoints/generatorG_20.pth
-#  - logs/2023-06-17-13-46-44-allcottondataset/checkpoints/discriminatorG_22.pth
-#  - logs/2023-06-17-13-46-44-allcottondataset/checkpoints/generatorG_22.pth
-#  - logs/2023-07-18-15-29-36-unet_z2root/checkpoints/discriminatorG_3.pth
-#  - logs/2023-07-18-15-29-36-unet_z2root/checkpoints/generatorG_3.pth
-#  - logs/2023-12-01-16-15-18-cotton_raw/checkpoints/generatorG_73.pth
-#  - logs/2024-02-26-21-41-42-rgbwater/checkpoints/generatorG_50.pth
-#  - logs/2024-02-26-21-41-42-rgbwater/checkpoints/discriminatorG_50.pth
 
 generatorG:
-#  type: Generator_Unet
-  type: Generator_UnetNoEAM
+  type: Generator_Unet
+#  type: Generator_UnetNoEAM
 #  type: null
 
 
