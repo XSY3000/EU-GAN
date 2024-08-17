@@ -54,10 +54,10 @@ class base_module(nn.Module):
 
 
 import os.path
-from networks.unet import Unet, UnetNoEAM
+from networks.unet import EAMUnet, UnetNoEAM
 
 
-class Generator_Unet(Unet):
+class Generator_EAMUnet(EAMUnet):
     def __init__(self):
         super().__init__()
 

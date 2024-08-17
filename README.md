@@ -1,2 +1,2 @@
-# EU-Net
+# EU-GAN
  A root inpainting network

@@ -68,7 +68,7 @@ class Up(nn.Module):
         return x1
 
 
-class Unet(base_module):
+class EAMUnet(base_module):
     def __init__(self):
         super().__init__()
         # Contracting path

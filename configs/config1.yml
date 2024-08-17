@@ -28,7 +28,7 @@ lr: 0.0004
 resume: null
 
 generatorG:
-  type: Generator_Unet
+  type: Generator_EAMUnet
 #  type: Generator_UnetNoEAM
 #  type: null
 
