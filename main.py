@@ -18,6 +18,11 @@ torch.backends.cudnn.deterministic = True
 
 config = Config('configs/config1.yml')
 trainer = Trainer(config)
+
 # trainer.train()
-# trainer.eval()
-trainer.test('', weight='weights/EU-GAN/bestmodel.pth')
+
+trainer.test(weight='weights/EU-GAN/bestmodel.pth')
+
+# image_path = 'your/image/path'
+# save_path = 'your/save/path'  # if '', the result will be saved in the log directory.
+# trainer.infer(image_path, save_path, weights='weights/EU-GAN/bestmodel.pth')

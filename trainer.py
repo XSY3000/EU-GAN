@@ -392,6 +392,7 @@ class Trainer:
                 H, W = image.shape[:2]
                 output = self.generatorG(input)
                 output = torch.threshold(output, 0.75, 0)
+                output = F.interpolate(output, input.shape[-2:], mode='bilinear')
                 output = output * (1 - input) + input
                 for i in range(4):
                     output = self.generatorG(output)
@@ -401,14 +402,14 @@ class Trainer:
                 output = F.pad(output, (x_min, W - x_max, y_min, W - y_max), 'constant', 0)
                 output = torch.threshold(output, 0.5, 0) + torch.from_numpy(image).to(self.device).unsqueeze(
                     0).unsqueeze(0)
-                output = output[:, :, 100:-100, 100:-100]
+                # output = output[:, :, 100:-100, 100:-100]
                 output = self.generatorG(output)
                 output = torch.threshold(output, 0.5, 0)
                 output = self.generatorG(output)
 
                 output = output.cpu().numpy().squeeze()
+                output = cv2.resize(output, (W, H), interpolation=cv2.INTER_LINEAR)
                 output = cv2.threshold(output, 0.5, 1, cv2.THRESH_BINARY)[1].astype(np.uint8)
-                output = np.pad(output, ((100, 100), (100, 100)), 'constant', constant_values=0)
                 output = output * (1 - cv2.dilate(image, np.ones((3, 3)), iterations=2))
                 output_mask = cv2.dilate(output, np.ones((7, 7)), iterations=3)
                 output += image
