@@ -27,11 +27,21 @@ download this repository's zip file
 unzip EU-GAN-main.zip
 cd EU-GAN-main
 ```
-2. Install the requirements
+2. create a virtual environment  
+
+pip:
+```
+python -m pip install virtualenv
+```
+conda:
+```
+conda create -n eu-gan python=3.9
+```
+3. Install the requirements
 ```
 pip install -r requirements.txt
 ```
-3. Download the dataset and weights
+4. Download the dataset and weights
 >The dataset and weights can be downloaded from [here](https://drive.google.com/drive/folders/1H9u0tMWM6EqAU3g0LItMFJefoRmFgYN1?usp=drive_link) 
 > 
 >Put the "EU-GAN" directory in the "weights" directory.  
