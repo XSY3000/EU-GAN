@@ -11,6 +11,7 @@ The root system is crucial for nutrient absorption and plant stability, playing 
 - CUDA
 - cuDNN
 - python 3.9
+- Anaconda
 
 ## **Installation**
 
@@ -28,14 +29,10 @@ unzip EU-GAN-main.zip
 cd EU-GAN-main
 ```
 2. create a virtual environment  
-
-pip:
-```
-python -m pip install virtualenv
-```
 conda:
 ```
 conda create -n eu-gan python=3.9
+conda activate eu-gan
 ```
 3. Install the requirements
 ```
