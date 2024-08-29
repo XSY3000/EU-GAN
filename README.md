@@ -34,7 +34,12 @@ conda:
 conda create -n eu-gan python=3.9
 conda activate eu-gan
 ```
-3. Install the requirements
+3. Install PyTorch  
+You can get the installation instructions for your system from the [PyTorch website](https://pytorch.org/get-started/previous-versions/).  
+In this paper, we use PyTorch 1.13.1, try to get as close to this version as possible and ensure that the CUDA is available using `torch.cuda.is_available()`.  
+  
+
+4. Install the requirements
 ```
 pip install -r requirements.txt
 ```
