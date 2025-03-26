@@ -399,7 +399,7 @@ class Trainer:
                     output = torch.threshold(output, 0.75, 0)
                 output = output * (1 - input) + input
                 output = F.interpolate(output, (y_max - y_min, x_max - x_min), mode='bilinear')
-                output = F.pad(output, (x_min, W - x_max, y_min, W - y_max), 'constant', 0)
+                output = F.pad(output, (x_min, W - x_max, y_min, H - y_max), 'constant', 0)
                 output = torch.threshold(output, 0.5, 0) + torch.from_numpy(image).to(self.device).unsqueeze(
                     0).unsqueeze(0)
                 # output = output[:, :, 100:-100, 100:-100]
